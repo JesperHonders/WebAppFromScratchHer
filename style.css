@@ -106,3 +106,9 @@ a:visited {
 #weather {
   color: #FF9B00;
 }
+
+@media (max-width: 470px) {
+  input{
+    width: 100%;
+  }
+}
