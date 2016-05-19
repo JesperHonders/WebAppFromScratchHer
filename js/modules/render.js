@@ -1,7 +1,7 @@
 var render = (function () {
 
   function city(data){
-    var temp = data.main.temp - 272.15
+    var temp = data.main.temp - 275.15
     var city = {
       name: "The weather in "+data.name,
       temp: Math.round(temp * 100) / 100+"°C",
