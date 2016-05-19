@@ -21,12 +21,18 @@ var routes = (function () {
 
   function init () {
     routie({
-      '/': function() {
+      'home': function() {
         sections.toggle('#home')
       },
       'city/:id': function(id) {
         sections.toggle('#detail')
         api.getCity(id)
+        utils.buttons()
+      },
+      'favorites': function() {
+        sections.toggle('#favorites')
+        localstorage.list()
+        events.swipeInit()
       }
     });
   }

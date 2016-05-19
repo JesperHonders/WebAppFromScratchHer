@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>My first app</title>
 </head>
 
 <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#favorites">Saved searches</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <section id="loader" class="none">
         <img src="img/loader.gif">
@@ -15,15 +29,24 @@
 
     <section id="home" class="content">
         <form id="cityInputForm">
-        <h1>Whats the weather today in</h1>
+        <h1 id="mainText">Whats the weather today in</h1>
           <input id="cityInput" type="text" />
-          <input id="citySubmit" type="submit"/>
+          <input id="citySubmit" value="?" type="submit"/>
         </form>
     </section>
 
     <section id="detail" class="content none">
-        <h1 data-bind="name">Detail Page</h1>
-        <span data-bind="temp"></span> - <span data-bind="clouds"></span> - <span data-bind="windDeg"></span> - <span data-bind="windSpeed"></span>
+        <h1 class="cityH" data-bind="name"></h1>
+        <h2 class="tempH" data-bind="temp"></h2>
+        <p class="overcastP" data-bind="clouds"></p>
+        <button id="favoriteAB">♡</button>
+        <button id="favoriteRB">❤</button>
+    </section>
+
+    <section id="favorites" class="content">
+      <a data-bind="link">
+        <h1 class="cityH" data-bind="name"></h1>
+      </a>
     </section>
 
     <script src="js/dist/hammer.js"></script>
@@ -35,6 +58,8 @@
     <script src="js/modules/render.js"></script>
     <script src="js/modules/loader.js"></script>
     <script src="js/modules/api.js"></script>
+    <script src="js/modules/localstorage.js"></script>
+    <script src="js/modules/utils.js"></script>
     <script src="js/application.js"></script>
 </body>
 </html>
