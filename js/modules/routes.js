@@ -1,4 +1,5 @@
 var routes = (function () {
+  'use strict';
 
   var select = {
       one: function (selector) {
@@ -31,7 +32,7 @@ var routes = (function () {
       },
       'favorites': function() {
         sections.toggle('#favorites')
-        localstorage.list()
+        render.storageItems()
         events.swipeInit()
       }
     });
