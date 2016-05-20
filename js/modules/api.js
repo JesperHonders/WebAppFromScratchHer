@@ -1,4 +1,5 @@
 var api = (function () {
+  'use strict';
 
   var ApiKey = "c680ce8bf66f2607453af41493091874"
   function getCity(city) {

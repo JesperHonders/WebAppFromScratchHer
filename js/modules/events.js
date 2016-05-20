@@ -1,4 +1,5 @@
 var events = (function () {
+  'use strict';
 
     function init(){
       document.getElementById("citySubmit").addEventListener("click", function(event){
@@ -17,7 +18,7 @@ var events = (function () {
       document.getElementById("favoriteRB").addEventListener("click", function(event){
         var wholeHash = window.location.hash,
         splittedHash = wholeHash.split("/");
-        localStorage.removeItem(splittedHash[1]);
+        localstorage.remove(splittedHash[1]);
         document.getElementById('favoriteRB').style.display = 'none';
         document.getElementById('favoriteAB').style.display = 'block';
       });
